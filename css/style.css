@@ -572,8 +572,9 @@ input:checked + label .card-paragraph {
   }
 
   .header-background {
-    height: 50vh;
+    height: 35vh;
   }
+  
 }
 
 @media (max-width: 767px) {
