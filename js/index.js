@@ -1,15 +1,25 @@
 // Click Count Tracker
 
-const theme_switch = document.getElementById("theme-switch");
-const home_page_link = document.getElementById("home-page");
-const history_page_link = document.getElementById("history-page");
-const culture_page_link = document.getElementById("culture-page");
-const location_page_link = document.getElementById("location-page");
-const history_card = document.getElementById("c1");
-const culture_card = document.getElementById("c2");
-const location_card = document.getElementById("c3");
+const clickElements = [
+  { id: "theme-switch", name: "Theme Switch" },
+  { id: "home-page-link", name: "Home Page" },
+  { id: "history-page-link", name: "History Page" },
+  { id: "culture-page-link", name: "Culture Page" },
+  { id: "location-page-link", name: "Location Page" },
+  { id: "british-timeline", name: "British Card" },
+  { id: "tsunami-timeline", name: "Tsunami Card" },
+  { id: "chau-timeline", name: "Chau Card" },
+  { id: "protection-timeline", name: "Protections Card" }
+];
+
+const selectionElements = [
+  { id: "c1", name: "History Card" },
+  { id: "c2", name: "Culture Card" },
+  { id: "c3", name: "Location Card" }
+];
 
 function trackClicks(element, name) {
+  if (!element) return;
   let count = 0;
 
   element.addEventListener("click", () => {
@@ -24,19 +34,17 @@ function trackSelection(element, name) {
 
   element.addEventListener("change", () => {
     count++;
-    console.log(`${name} opened ${count} times.`)
+    console.log(`${name} opened ${count} times.`);
   })
 }
 
-trackClicks(theme_switch, "Theme Switch");
-trackClicks(home_page_link, "Home Page");
-trackClicks(history_page_link, "History Page");
-trackClicks(culture_page_link, "Culture Page");
-trackClicks(location_page_link, "Location Page");
+clickElements.forEach(item => {
+  trackClicks(document.getElementById(item.id), item.name);
+});
 
-trackSelection(history_card, "History Card");
-trackSelection(culture_card, "Culture Card");
-trackSelection(location_card, "Location Card");
+selectionElements.forEach(item => {
+  trackSelection(document.getElementById(item.id), item.name);
+});
 
 // Dark Mode Toggle
 
@@ -65,10 +73,10 @@ themeswitch.addEventListener("click", () => {
 // History Timeline
 
 const timelineCheckboxes = [
-  document.getElementById('timeline'),
-  document.getElementById('timeline2'),
-  document.getElementById('timeline3'),
-  document.getElementById('timeline4')
+  document.getElementById('british-timeline'),
+  document.getElementById('tsunami-timeline'),
+  document.getElementById('chau-timeline'),
+  document.getElementById('protection-timeline')
 ];
 
 const timelineContents = [
