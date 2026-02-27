@@ -285,133 +285,6 @@ html {
   transform: translateY(0);
 }
 
-/* CARDS */
-
-.wrapper {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.end-section-div {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  align-items: center;
-  padding: 60px 60px;
-  background-color: var(--nav-bar-bg);
-  border-radius: 20px;
-}
-
-.card-container {
-  width: 500px;
-  height: 300px;
-  display: flex;
-  justify-content: start;
-  flex-wrap: nowrap;
-}
-
-.card {
-  width: 130px;
-  height: 300px;
-  background-size: cover;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 25px;
-  margin: 0 10px 0 10px;
-  transition: .6s cubic-bezier(.28, -0.03, 0, .99); 
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-.row {
-  color: white;
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: hsla(0, 0%, 4%, 0.647);
-  height: 70px;
-  min-height: 70px;
-  overflow: hidden;
-}
-
-.description {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: visible;
-  margin: 20px 15px 20px 20px;
-  font-size: 13px;
-  gap: 16px;
-}
-
-.card-paragraph {
-  white-space: normal;
-  overflow: hidden;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease 0.1s;
-  color: white;
-  padding: 5px 0 0 0;
-}
-
-.card-page-link {
-  color: #ffffff;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  transition: border-color 0.2s ease, text-shadow 0.2s ease;
-}
-
-.card-page-link:hover {
-  border-bottom: 1px solid #ffffff;
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
-}
-
-.card-title {
-  text-transform: uppercase;
-}
-
-.card-title-link {
-  border: 3px solid black;
-  width: fit-content;
-  border: 32px;
-}
-
-input {
-  display: none;
-}
-
-input:checked + label {
-  width: 500px;
-  cursor: default;
-  transform: translateY(-5px);
-}
-
-input:checked + label .description {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-input:checked + label .card-paragraph {
-  visibility: visible;
-  opacity: 1;
-}
-
-#one {
-  background-image: url(../images/nsi-history-card-img.jpg);
-}
-
-#two {
-  background-image: url(../images/nsi-culture-card-img.jpg);
-}
-
-#three {
-  background-image: url(../images/nsi-location-card.webp);
-}
-
 /* TIMELINE CARDS */
 
 .timeline-page-title {
@@ -507,15 +380,29 @@ input:checked + label .card-paragraph {
 
 /* RESPONSIVE WEBSITE */
 
+@media (min-width: 1273px) {
+  .introduction-paragraph {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+
+  .subsection-paragraph {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    max-width: 700px;
+  }
+}
+
 @media (max-width: 1166px) {
   .page-title {
-    font-size: 2em;
+    font-size: 2rem;
     margin-bottom: 20px;
   }
 
   .subsection-page-title {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin: 0 20px 20px 0;
+    justify-content: right;
   }
 
   .section-div {
@@ -581,6 +468,17 @@ input:checked + label .card-paragraph {
   .header-title {
     font-size: 1rem;
     padding: 0 5px 0 5px;
+  }
+
+  .page-title {
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+  .subsection-page-title {
+    font-size: 2.5em;
+    text-align: center;
+    justify-content: center;
   }
 
   .navigation-bar {
