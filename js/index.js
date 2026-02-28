@@ -9,7 +9,6 @@ const clickElements = [
   { id: "british-timeline", name: "British Card" },
   { id: "tsunami-timeline", name: "Tsunami Card" },
   { id: "chau-timeline", name: "Chau Card" },
-  { id: "protection-timeline", name: "Protections Card" }
 ];
 
 const selectionElements = [
@@ -35,7 +34,7 @@ function trackSelection(element, name) {
   element.addEventListener("change", () => {
     count++;
     console.log(`${name} opened ${count} times.`);
-  })
+  });
 }
 
 clickElements.forEach(item => {
@@ -74,16 +73,16 @@ themeswitch.addEventListener("click", () => {
 
 const timelineCheckboxes = [
   document.getElementById('british-timeline'),
+  document.getElementById('early-contact-timeline'),
   document.getElementById('tsunami-timeline'),
   document.getElementById('chau-timeline'),
-  document.getElementById('protection-timeline')
 ];
 
 const timelineContents = [
   document.querySelector('.timeline-content1'),
   document.querySelector('.timeline-content2'),
   document.querySelector('.timeline-content3'),
-  document.querySelector('.timeline-content4')
+  document.querySelector('.timeline-content4'),
 ];
 
 timelineCheckboxes.forEach((currentCheckbox, currentIndex) => {
